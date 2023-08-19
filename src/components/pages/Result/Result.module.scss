@@ -1,0 +1,90 @@
+@import "../../../index.scss";
+
+.Container {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  height: 100vh;
+  justify-content: space-around;
+}
+
+.CharacterContainer {
+  @include neumorphism();
+  height: 51vh;
+  width: 30vh;
+  background-color: white;
+  border-radius: 20px;
+}
+
+//Heads
+@mixin Head {
+  margin-top: 3vh;
+  width: 100%;
+  height: 7vh;
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.Head_M {
+  @include Head();
+  background-image: url("../../../assets/m_head.png");
+}
+
+.Head_F {
+  @include Head();
+  background-image: url("../../../assets/f_head.png");
+}
+
+.Head_M_Old {
+  @include Head();
+  background-image: url("../../../assets/old_m_head.png");
+}
+
+.Head_F_Old {
+  @include Head();
+  background-image: url("../../../assets/old_f_head.png");
+}
+
+//Tops
+@mixin Tops {
+  width: 100%;
+  height: 16vh;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.Top_Developer {
+  @include Tops();
+  background-image: url("../../../assets/developer.png");
+}
+
+.Top_Chef {
+  @include Tops();
+  background-image: url("../../../assets/chef.png");
+}
+
+.Top_Yoga {
+  @include Tops();
+  background-image: url("../../../assets/yoga.png");
+}
+
+.Top_Social {
+  @include Tops();
+  background-image: url("../../../assets/social_media.png");
+}
+
+.Pants {
+  width: 100%;
+  height: 24vh;
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+  top: -3vh;
+  right: -1vh;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+}

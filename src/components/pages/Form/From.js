@@ -47,7 +47,7 @@ export default function From() {
     if (
       allData.name === "" ||
       allData.surname === "" ||
-      allData.occupation === "" ||
+      allData.occupation === "Choose Occupation" ||
       allData.gender === ""
     ) {
       setValidationMessage("Please fill in all the fields");
@@ -103,7 +103,7 @@ export default function From() {
         <div className={Style.Right}>
           <div className={Style.RadioContainer}>
             <select ref={Occupation}>
-              <option>Occupation</option>
+              <option>Choose Occupation</option>
               <option>Chef</option>
               <option>Yoga instructor</option>
               <option>Developer</option>

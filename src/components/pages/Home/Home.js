@@ -12,7 +12,10 @@ export default function Home() {
       <div>
         <p>Created by Reinhardt de Beer</p>
         <p>
-          Github link <a>here</a>
+          Github link{" "}
+          <a style={{ cursor: "pointer" }} href="https://github.com/epicYellow">
+            here
+          </a>
         </p>
       </div>
     </div>
