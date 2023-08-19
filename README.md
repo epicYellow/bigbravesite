@@ -11,6 +11,15 @@
 
 </div>
 
+##
+
+<h3>Dependancies Installed</h3>
+<a href="https://www.npmjs.com/package/react-colorful">react-colorful (Color Picker)</a>
+
+<a href="react-date-picke">react-date-picke (Date Picker)</a>
+
+##
+
 <h2>Wireframes</h2>
 
 <a href="https://www.figma.com/file/zgHqhkLEWBF8Ta8qZbZ5BM/BigBraveWebsite?type=design&node-id=0%3A1&mode=design&t=AiW7FKgMztxZyNdC-1">Board Link</a>
@@ -28,4 +37,4 @@
 <image src="ReadmeAssets\Blender_2.png" width="300px"/>
 
 <h2>Final Product</h2>
-<a href="https://www.figma.com/file/zgHqhkLEWBF8Ta8qZbZ5BM/BigBraveWebsite?type=design&node-id=0%3A1&mode=design&t=AiW7FKgMztxZyNdC-1">Link</a>
+<a href="https://bigbrave-characterbuilder-1mhlvy0zt-epicyellow.vercel.app/">Link</a>
