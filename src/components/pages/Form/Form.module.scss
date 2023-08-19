@@ -91,9 +91,17 @@
   @include extraContainers();
   transform: rotate(0deg);
   display: flex;
+  justify-content: space-between;
   color: $light_black;
   align-items: center;
   cursor: pointer;
+}
+
+.click_indicate {
+  background-image: url("../../../assets/Clickanimation.svg");
+  width: 32px;
+  height: 32px;
+  background-size: contain;
 }
 
 .DateContainer {

@@ -1,4 +1,6 @@
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
+import { useNavigate } from "react-router-dom";
+
 import { HexColorPicker } from "react-colorful";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
@@ -7,27 +9,87 @@ import Button from "../../common/Button/Button";
 import Style from "./Form.module.scss";
 
 export default function From() {
-  const [startDate, setStartDate] = useState(new Date());
+  let navigate = useNavigate();
+
   const [hide, setHide] = useState(true);
+  const [validationMessage, setValidationMessage] = useState("");
+
+  //values
+  const [startDate, setStartDate] = useState(new Date());
   const [color, setColor] = useState("#aabbcc");
+  const [Gender, setGender] = useState("");
+
+  //Refs
+  const Name = useRef(),
+    Surname = useRef(),
+    Occupation = useRef();
 
   const colorChange = async (color) => {
     setColor(color);
     setHide(true);
   };
+
+  const onGenderChange = (e) => {
+    setGender(e.target.value);
+  };
+
+  const CompileData = () => {
+    let allData = {
+      name: Name.current.value,
+      surname: Surname.current.value,
+      occupation: Occupation.current.value,
+      color: color,
+      birthdate: startDate.getFullYear(),
+      gender: Gender,
+    };
+
+    //Validation
+    if (
+      allData.name === "" ||
+      allData.surname === "" ||
+      allData.occupation === "" ||
+      allData.gender === ""
+    ) {
+      setValidationMessage("Please fill in all the fields");
+      console.log(allData);
+    } else {
+      let today = new Date();
+      today = today.getFullYear();
+      setValidationMessage("");
+      if (today - allData.birthdate < 18) {
+        setValidationMessage("You have to be 18 or older");
+        console.log(startDate);
+        console.log(allData);
+      } else {
+        sessionStorage.setItem("userData", JSON.stringify(allData));
+        navigate("/Result");
+      }
+    }
+  };
+
   return (
     <div className={Style.Container}>
       <h2>Create your character!</h2>
       <p>Make sure to fill in all the fields</p>
       <div className={Style.FormContainer}>
         <div className={Style.Left}>
-          <Input placeholder="Name" rotation={30} />
-          <Input placeholder="Surname" rotation={""} />
+          <Input ref={Name} placeholder="Name" rotation={30} />
+          <Input ref={Surname} placeholder="Surname" rotation={""} />
           <div className={Style.RadioContainer}>
             <label>Gender:</label>
-            <input type="checkbox" />
+            <input
+              value="Male"
+              type="radio"
+              name="radio"
+              onChange={(e) => onGenderChange(e)}
+            />
             <label>Male</label>
-            <input type="checkbox" />
+            <input
+              value="Female"
+              type="radio"
+              name="radio"
+              onChange={(e) => onGenderChange(e)}
+            />
             <label>Female</label>
           </div>
         </div>
@@ -40,7 +102,7 @@ export default function From() {
         </div>
         <div className={Style.Right}>
           <div className={Style.RadioContainer}>
-            <select>
+            <select ref={Occupation}>
               <option>Occupation</option>
               <option>Chef</option>
               <option>Yoga instructor</option>
@@ -55,6 +117,7 @@ export default function From() {
             className={Style.SelectContainer}
           >
             <label>Favourite color</label>
+            <div className={Style.click_indicate}></div>
           </div>
 
           <div className={hide ? Style.ModalHide : Style.ModalShow}>
@@ -74,7 +137,8 @@ export default function From() {
           </div>
         </div>
       </div>
-      <Button text="Done" />
+      <p style={{ color: "red" }}>{validationMessage}</p>
+      <Button onClick={() => CompileData()} text="Done" />
     </div>
   );
 }

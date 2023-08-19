@@ -1,7 +1,7 @@
-import React from "react";
+import React, { forwardRef } from "react";
 import Style from "./Input.module.scss";
 
-export default function Input(props) {
+const Input = forwardRef(({ ...props }, ref) => {
   return (
     <div
       className={
@@ -13,10 +13,13 @@ export default function Input(props) {
       }
     >
       <input
+        ref={ref}
         className={Style.InputStyling}
         type={props.type}
         placeholder={props.placeholder}
       />
     </div>
   );
-}
+});
+
+export default Input;
