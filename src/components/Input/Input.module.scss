@@ -1,11 +1,25 @@
 @import "../../index.scss";
 
+.InputStyling {
+  @include InputSize;
+  @include neumorphism;
+  border: none;
+  border-radius: 20px;
+  padding-left: 10px;
+}
+
 .rotate_thirty {
   @include InputSize;
+  border: none;
   transform: rotate(30deg);
 }
 
 .rotate_thirty_minus {
   @include InputSize;
   transform: rotate(-30deg);
+}
+
+.none {
+  @include InputSize;
+  transform: rotate(0deg);
 }

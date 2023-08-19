@@ -9,10 +9,14 @@ export default function Input(props) {
           ? Style.rotate_thirty
           : props.rotation === -30
           ? Style.rotate_thirty_minus
-          : ""
+          : Style.none
       }
     >
-      <input placeholder={props.placeholder} />
+      <input
+        className={Style.InputStyling}
+        type={props.type}
+        placeholder={props.placeholder}
+      />
     </div>
   );
 }

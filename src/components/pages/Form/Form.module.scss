@@ -40,14 +40,6 @@
   @include column();
 }
 
-input {
-  @include InputSize;
-  @include neumorphism;
-  border: none;
-  border-radius: 20px;
-  padding-left: 10px;
-}
-
 .Loading_Container {
   width: 31vh;
   height: 31vh;
@@ -74,4 +66,63 @@ input {
   backdrop-filter: blur(20px);
   /* important part */
   grid-area: inner-div;
+}
+
+@mixin extraContainers {
+  border-radius: 20px;
+  width: 260px;
+  height: 25px;
+  padding: 10px;
+  @include neumorphism;
+  color: $light_black;
+  background-color: white;
+}
+
+.RadioContainer {
+  @include extraContainers();
+  display: flex;
+  justify-content: space-around;
+  color: $light_black;
+  align-items: center;
+  transform: rotate(-30deg);
+}
+
+.SelectContainer {
+  @include extraContainers();
+  transform: rotate(0deg);
+  display: flex;
+  color: $light_black;
+  align-items: center;
+  cursor: pointer;
+}
+
+.DateContainer {
+  @include extraContainers();
+  transform: rotate(30deg);
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+select {
+  width: 260px;
+  height: 25px;
+  border: none;
+  font-size: 14px;
+  color: $light_black;
+}
+
+label {
+  color: $light_black;
+  font-size: 14px;
+}
+
+.ModalShow {
+  position: absolute;
+  display: block;
+}
+
+.ModalHide {
+  position: absolute;
+  display: none;
 }
