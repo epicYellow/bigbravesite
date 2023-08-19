@@ -1,0 +1,11 @@
+@import "../../index.scss";
+
+.rotate_thirty {
+  @include InputSize;
+  transform: rotate(30deg);
+}
+
+.rotate_thirty_minus {
+  @include InputSize;
+  transform: rotate(-30deg);
+}

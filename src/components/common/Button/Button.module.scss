@@ -1,0 +1,32 @@
+@import "../../../index.scss";
+
+button {
+  margin: 0;
+  padding: 0;
+  border: none;
+  cursor: pointer;
+}
+
+.Primary {
+  background-color: $app_blue;
+  width: 200px;
+  height: 200px;
+  border-radius: 100px;
+  font-size: 40px;
+  font-weight: bold;
+  color: $light_black;
+  transition: box-shadow 0.3 ease-in-out;
+  @include shadow;
+}
+
+.Primary:hover {
+  @include shadow_hover;
+}
+
+.Secondary {
+  background-color: $app_purple;
+  @include InputSize;
+  border-radius: 20px;
+  font-size: 20px;
+  color: white;
+}

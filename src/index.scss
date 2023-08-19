@@ -1,0 +1,70 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato&display=swap");
+
+body {
+  margin: 0;
+  font-family: "Lato", sans-serif;
+  background-color: #f2f2f2;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+
+//colors
+$app_blue: #4dd2d8;
+$app_purple: #c366d8;
+$app_darkPurple: #826eb6;
+
+$primary_White: #f2f2f2;
+$secondary_White: #e1f0fc;
+$light_black: #4b4b4b;
+$dark_black: #2b2b2b;
+
+//Fonts and headings
+h1 {
+  font-size: 64px;
+  font-weight: bolder;
+  color: $dark_black;
+}
+
+h2 {
+  font-size: 40px;
+  font-weight: bold;
+  color: $light_black;
+}
+
+p {
+  font-size: 20px;
+  color: $light_black;
+  a {
+    text-decoration: none;
+    color: $app_purple;
+    font-weight: bold;
+  }
+}
+
+@mixin shadow {
+  box-shadow: 1.7px 1.7px 2.5px rgba(0, 0, 0, 0.014),
+    4px 4.1px 6px rgba(0, 0, 0, 0.02), 7.5px 7.8px 11.3px rgba(0, 0, 0, 0.025),
+    13.4px 13.8px 20.1px rgba(0, 0, 0, 0.03),
+    25.1px 25.9px 37.6px rgba(0, 0, 0, 0.036),
+    60px 62px 90px rgba(0, 0, 0, 0.05);
+}
+
+@mixin shadow_hover {
+  box-shadow: 0.7px 0.9px 1.7px rgba(0, 0, 0, 0.014),
+    1.7px 2.2px 4px rgba(0, 0, 0, 0.02), 3.3px 4.1px 7.5px rgba(0, 0, 0, 0.025),
+    5.8px 7.4px 13.4px rgba(0, 0, 0, 0.03),
+    10.9px 13.8px 25.1px rgba(0, 0, 0, 0.036),
+    26px 33px 60px rgba(0, 0, 0, 0.05);
+}
+
+@mixin InputSize {
+  width: 250px;
+  height: 40px;
+}
+
+@mixin neumorphism {
+  box-shadow: 20px 20px 60px #cecece, -20px -20px 60px #ffffff;
+}
