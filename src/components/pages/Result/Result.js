@@ -77,7 +77,8 @@ export default function Result() {
         <p>
           Allow me to introduce you to {name}, a {age} year old with a timeless
           spirit. {gender === "Male" ? "He" : "She"} has honed{" "}
-          {gender === "Male" ? "his" : "her"} expertise in {occupation} over the
+          {gender === "Male" ? "his" : "her"} expertise in{" "}
+          {occupation === "Developer" ? "Development" : occupation} over the
           years and continue to embrace life's adventures.
         </p>
       </div>
