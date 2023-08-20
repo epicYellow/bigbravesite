@@ -22,12 +22,15 @@
 
 <h2>Wireframes</h2>
 
+<a href="https://pin.it/29kJipP">Pinterest Link</a>
+
 <a href="https://www.figma.com/file/zgHqhkLEWBF8Ta8qZbZ5BM/BigBraveWebsite?type=design&node-id=0%3A1&mode=design&t=AiW7FKgMztxZyNdC-1">Board Link</a>
 
 <div align="center">
 <image src="ReadmeAssets\First.png" width="300px"/>
 <image src="ReadmeAssets\Middle.png" width="300px"/>
 <image src="ReadmeAssets\Last.png" width="300px"/>
+</div>
 
 <h2>Blender ScreenShots</h2>
 <p>Created and exported the svg animations from blender </p>
@@ -35,6 +38,8 @@
 <div align="center">
 <image src="ReadmeAssets\Blender_1.png" width="300px"/>
 <image src="ReadmeAssets\Blender_2.png" width="300px"/>
+<image src="ReadmeAssets\Blender_3.png" width="300px"/>
+</div>
 
 <h2>Final Product</h2>
 <a href="https://bigbrave-characterbuilder-1mhlvy0zt-epicyellow.vercel.app/">Link</a>
